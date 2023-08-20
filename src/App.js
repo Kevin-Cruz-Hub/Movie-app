@@ -5,6 +5,8 @@ import './App.css';
 // console.log(process.env.REACT_APP_MOVIE_API_KEY);
 
 function App() {
+  // You always need to enter process.env.<api key variable>
+  // if you put a new environment variable you need to stop the server and run it again
   const apiKey = process.env.REACT_APP_MOVIE_API_KEY
 
   const[movie, setMovie] = useState(null);
@@ -25,7 +27,8 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <div className='bg-white m-20 rounded-3xl flex flex-col justify-center items-center shadow-2xl'>
+      <h1 className='text-2xl border-3 text-yellow-400 ease-in duration-200 hover:text-yellow-600'>Movie Display</h1>
       <Form movieSearch={getMovie}/>
       <MovieDisplay movie={movie}/>
     </div>
